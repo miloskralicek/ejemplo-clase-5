@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECMAscript 6</title>
+</head>
+<body>
+    <h1>ECMAscript 6</h1>
+    <script>
+        /*
+            2009: ECMAscript 5
+            2015: ECMAscript 6
+            2016: ECMAscript 6
+            2017: ECMAscript 6
+            2018: ECMAscript 6
+            2019: ECMAscript 6
+            2020: ECMAscript 6
+            2021: ECMAscript 6
+            
+        */
+
+        /*
+            NUEVOS CONSTRUCTORES DE VARIABLES
+        */
+        // Se declara la variable "nombre" y se le asigna un string
+      /*   var nombre = 'Santiago';
+        console.log('nombre', nombre);
+        
+        // Se declara la variable "nombre", sin que produzca error
+        var nombre = 'Pablo';
+        console.log('Pablo');
+        
+        // Se declara la variable "nombre", sin que produzca error
+        let apellido = 'Garcia';
+        console.log('Garcia:', Garcia); */
+
+        //Si se intenta declarar nuevamente una variable que fue declarada en alg{un lugar con el constructor de variables let o const, se produce un error
+        //let apellido = 'Garcia'// 
+
+        const iva = 21;
+        
+
+        /* Bloque de codigo anonimo */
+            console.warn('Bloque de codigo anonimo (se ejecuta solo)');
+            {
+                var aVar = 50;
+                let bLet = 50;
+                const cConst = 50;
+                var varGlobal1 = 'ABC';
+                let varGlobal2 = 'XYZ';
+                
+                console.log('Dentro del bloque anonimo');
+                console.log('aVar:', aVar);
+                console.log('bLet:', bLet);
+                console.log('cConst:', cConst);                
+                console.log('cConst:', varGlobal1);                
+                console.log('cConst:', varGlobal2);                
+            }
+            console.log('Fuera del bloque anonimo:');
+            console.log('aVar:',aVar);
+            console.log('varGlobal1:', varGlobal1);
+            console.log('varGlobal2:', varGlobal2);
+
+
+            console.warn('Bloque condicional')
+        if (true) {
+            var     bVar = 100
+            let     bLet = 100
+            const   bConst = 100
+            var     varGlobal1 = '### MNO ###' // Se redeclara la misma variable! No se crea una nueva!
+            let     varGlobal2 = '### PQR ###' // Se crea una nueva variable local!
+            console.log('Dentro del bloque anónimo:')
+            console.log('bVar:', bVar)              // 100
+            console.log('bLet:', bLet)              // 100
+            console.log('bConst:', bConst)          // 100
+            console.log('varGlobal1:', varGlobal1)  // "### MNO ###"
+            console.log('varGlobal2:', varGlobal2)  // "### PQR ###"
+        }
+        console.log('Fuera del bloque anónimo:')
+        console.log('bVar:', bVar)                  // 100
+        // console.log('bLet:', bLet)               // Uncaught ReferenceError: bLet is not defined
+        // console.log('bConst:', bConst)           // Uncaught ReferenceError: bConst is not defined
+
+        console.error('\n CONSTRUCTORES DE FUNCIONES:');
+        /*
+        en ES5        
+        function sumar(n1,n2) {
+            var total = n1 + n2
+            return total
+        }
+
+            var sumar = function (n1,n2){
+                var total = n1 + n2
+                return total
+            }
+        */ 
+
+        var prueba = 40;
+        console.log(typeof sumar,sumar);
+
+        prueba = 'texto';
+        console.log(typeof sumar,sumar);
+        
+        prueba = [1 , 2 , 3]
+        console.log(typeof sumar,sumar);
+
+        prueba = function(){
+            console.log('Hacer algo....');
+        }
+        console.log(typeof prueba,prueba);
+
+
+        const sumar = function (n1,n2){
+            var total = n1 + n2
+            return total
+        }
+
+        console.log(typeof sumar); // function 
+
+        if(typeof sumar === 'function'){
+            console.log('resultado', sumar(3,7));
+        }else{
+            console.log('"sumar" no es una función.');
+        }
+
+        console.log('Arrow function (desde ES6 en adelante)');
+
+        const restar = (n1,n2) => {
+            let total = n1 - n2
+            return total
+        }
+
+        console.log('Resta:', restar(15,5));
+
+
+
+
+        const multiplicar = (n1,n2) =>  n1 * n2
+        console.log('Multiplicación:', multiplicar(15,5));
+
+
+        const cuadrado = (numero) => numero ** 2
+        console.log('Cuadrado de 5:', cuadrado(5)); 
+
+        const getSaludo = () => 'Hola!!'
+        console.log('Saludo:', getSaludo());
+
+
+        const imprimirSaludo = () => {
+            console.log('holissss!!!!!');
+            return 'Usuario saludado con exito!'
+        }
+
+        imprimirSaludo()
+        let resultadoDelSaludo = imprimirSaludo()
+        console.log('resultadoDelSaludo:', resultadoDelSaludo);
+
+        const imprimirSaludo2 = () => {
+            console.log();
+        }
+
+        let cliente = {
+            nombre: 'Marcelo',
+            apellido: 'Rodriguez',
+            codigo: 123,
+            cuit: '20-3044555-6',
+            cursos: ['PHP', 'JS', 'CSS']
+        }
+        console.log(cliente);
+        console.log(cliente,nombre);
+        console.log(cliente,apellido);
+        console.log(cliente,cuit);
+        console.log();
+
+
+
+</script>
+
+
+</body>
+</html>
